@@ -50,17 +50,18 @@ public final class MyGdxGame extends ApplicationAdapter implements InputProcesso
 	private Viewport viewport;
 	private SpriteBatch batch;
 	public BitmapFont font;
-	public EntityFactory entityFactory;
-	public GameData gameData;
 	private boolean paused = false;
 	private Music music;
 	public SoundEffects sfx = new SoundEffects();
+	public boolean toggleFullscreen = false, fullscreen = false;
+
+	public EntityFactory entityFactory;
+	public GameData gameData;
 	public AnimationFramesHelper animFrameHelper;
 	public LevelGenerator lvl;
 	public int winnerImageId;
 	public int gameStage = -1; // -1, 0, or 1 for before, during and after game
 	private boolean nextStage = false;
-	public boolean toggleFullscreen = false, fullscreen = false;
 
 	// Systems
 	public InputSystem inputSystem;
@@ -96,7 +97,7 @@ public final class MyGdxGame extends ApplicationAdapter implements InputProcesso
 		Gdx.input.setInputProcessor(this);
 
 		font = new BitmapFont();
-		font.getData().setScale(3);
+		font.getData().setScale(2);
 
 		ecs = new BasicECS();
 		entityFactory = new EntityFactory(this);
