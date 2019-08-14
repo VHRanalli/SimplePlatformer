@@ -62,10 +62,10 @@ public class EntityFactory {
 	public AbstractEntity createWall(int x, int y, float w, float h) {
 		AbstractEntity e = new AbstractEntity("Wall");
 
-		if (Settings.SHOW_GREY_BOXES) {
+		/*if (Settings.SHOW_GREY_BOXES) {
 			ImageComponent imageData = new ImageComponent("grey_box.png", 0, w, h);
 			e.addComponent(imageData);
-		}
+		}*/
 		PositionComponent pos = PositionComponent.ByBottomLeft(x, y, w, h);
 		e.addComponent(pos);
 		CollisionComponent cc = new CollisionComponent(true, false, true, false);
@@ -80,10 +80,10 @@ public class EntityFactory {
 	public AbstractEntity createHarmfulArea(int x, int y, float w, float h) {
 		AbstractEntity e = new AbstractEntity("HarmfulArea");
 
-		if (Settings.SHOW_GREY_BOXES) {
+		/*if (Settings.SHOW_GREY_BOXES) {
 			ImageComponent imageData = new ImageComponent("grey_box.png", 0, w, h);
 			e.addComponent(imageData);
-		}
+		}*/
 		PositionComponent pos = PositionComponent.ByBottomLeft(x, y, w, h);
 		e.addComponent(pos);
 		CollisionComponent cc = new CollisionComponent(true, false, true, false);
@@ -128,10 +128,10 @@ public class EntityFactory {
 	public AbstractEntity createLadderArea(int x, int y, float w, float h) {
 		AbstractEntity e = new AbstractEntity("Ladder");
 
-		if (Settings.SHOW_GREY_BOXES) {
+		/*if (Settings.SHOW_GREY_BOXES) {
 			ImageComponent imageData = new ImageComponent("grey_box.png", 0, w, h);
 			e.addComponent(imageData);
-		}
+		}*/
 		PositionComponent pos = PositionComponent.ByBottomLeft(x, y, w, h);
 		e.addComponent(pos);
 		CollisionComponent cc = new CollisionComponent(true, false, true, true);
@@ -146,10 +146,10 @@ public class EntityFactory {
 	public AbstractEntity createFluidPlatform(int x, int y, float w) {
 		AbstractEntity e = new AbstractEntity("FluidPlatform");
 
-		if (Settings.SHOW_GREY_BOXES) {
+		/*if (Settings.SHOW_GREY_BOXES) {
 			ImageComponent imageData = new ImageComponent("grey_box.png", 0, w, Settings.PLAYER_SIZE);
 			e.addComponent(imageData);
-		}
+		}*/
 		PositionComponent pos = PositionComponent.ByTopLeft(x, y, w, Settings.PLAYER_SIZE);
 		e.addComponent(pos);
 		CollisionComponent cc = new CollisionComponent(false, true, false, false);

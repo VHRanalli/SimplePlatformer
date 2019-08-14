@@ -90,16 +90,6 @@ public class InputSystem extends AbstractSystem {//implements ControllerListener
 		PlayersAvatarComponent uic = (PlayersAvatarComponent)entity.getComponent(PlayersAvatarComponent.class);
 		if (uic != null) {
 			if (uic.controller != null) {
-				if (!Settings.RELEASE_MODE) {
-					// 1 = right stick l/r
-					// 2 = left stick u/d
-					// 3 = left stick l.r
-					//MyGdxGame.p("Axis:" + uic.controller.getAxis(3));
-					// 0 =square
-					if (uic.controller.getButton(1)) {
-						MyGdxGame.p("button!");
-					}
-				}
 				if (Settings.CONTROLLER_MODE_1) {
 					uic.moveLeft = uic.controller.getAxis(Settings.AXIS) < -0.5f;
 					uic.moveRight = uic.controller.getAxis(Settings.AXIS) > 0.5f;
@@ -115,17 +105,17 @@ public class InputSystem extends AbstractSystem {//implements ControllerListener
 
 
 	public void keyDown(int keycode) {
-		if (!Settings.RELEASE_MODE) {
+		/*if (!Settings.RELEASE_MODE) {
 			MyGdxGame.p("key pressed: " + keycode);
-		}
+		}*/
 		key[keycode] = true;
 	}
 
 
 	public void keyUp(int keycode) {
-		if (!Settings.RELEASE_MODE) {
+		/*if (!Settings.RELEASE_MODE) {
 			//Settings.p("key released: " + keycode);
-		}
+		}*/
 
 		key[keycode] = false;
 	}
@@ -163,12 +153,12 @@ public class InputSystem extends AbstractSystem {//implements ControllerListener
 
 
 	public boolean axisMoved(Controller controller, int axisCode, float value) {
-		if (Settings.RELEASE_MODE == false) {
+		/*if (Settings.RELEASE_MODE == false) {
 			float val = controller.getAxis(axisCode);
 			if (val < -0.5f || val > .5f) {
 				MyGdxGame.p("Axis " + axisCode + ": " + controller.getAxis(axisCode));
 			}
-		}
+		}*/
 		if (axisCode == Settings.AXIS) {
 			if (game.gameStage == 0) {
 				AbstractEntity entity = game.players.get(controller).avatar;

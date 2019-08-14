@@ -34,7 +34,7 @@ public abstract class AbstractSystem {
 
 	// Override if required to run against all entities
 	public void process() {
-		if (this.entities == null || Settings.USE_SIMPLE_ECS) {
+		if (this.entities == null) {// || Settings.USE_SIMPLE_ECS) {
 			Iterator<AbstractEntity> it = ecs.getIterator();
 			while (it.hasNext()) {
 				AbstractEntity entity = it.next();

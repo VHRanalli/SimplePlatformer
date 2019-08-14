@@ -89,6 +89,10 @@ public final class MyGdxGame extends ApplicationAdapter implements InputProcesso
 
 	@Override
 	public void create() {
+		if (!Settings.RELEASE_MODE) {
+			p("Not in release mode; set Settings.RELEASE_MODE = true to put in release mode");
+		}
+		
 		camera = new OrthographicCamera(Settings.LOGICAL_WIDTH_PIXELS, Settings.LOGICAL_HEIGHT_PIXELS);
 		camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
 		viewport = new StretchViewport(Settings.WINDOW_WIDTH_PIXELS, Settings.WINDOW_HEIGHT_PIXELS, camera);
@@ -114,7 +118,6 @@ public final class MyGdxGame extends ApplicationAdapter implements InputProcesso
 		processCollisionSystem = new ProcessCollisionSystem(this, ecs);
 		this.collectorSystem = new CollectorSystem(this);
 		this.walkingAnimationSystem = new WalkingAnimationSystem(ecs);
-		//this.movingPlatformSystem = new MovingPlatformSystem(ecs);
 		this.moveToOffScreenSystem = new MoveToOffScreenSystem(ecs);
 		this.drawInGameGuiSystem = new DrawInGameGuiSystem(this, batch);
 		this.processPlayersSystem = new ProcessPlayersSystem(this);
@@ -134,9 +137,9 @@ public final class MyGdxGame extends ApplicationAdapter implements InputProcesso
 
 		startPreGame();
 
-		if (!Settings.RELEASE_MODE) {
+		/*if (!Settings.RELEASE_MODE) {
 			this.nextStage = true;
-		}
+		}*/
 	}
 
 

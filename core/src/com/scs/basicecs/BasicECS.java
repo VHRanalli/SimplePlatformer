@@ -34,9 +34,6 @@ public class BasicECS {
 		for (int i = this.entities.size()-1 ; i >= 0; i--) {
 			AbstractEntity entity = this.entities.get(i);
 			if (entity.isMarkedForRemoval()) {
-		    	if (!Settings.RELEASE_MODE) {
-		    		//MyGdxGame.p("Removing " + entity);
-		    	}
 				this.entities.remove(entity);
 
 				// Remove from systems
